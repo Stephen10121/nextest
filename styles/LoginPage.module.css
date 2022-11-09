@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "George-Italic";
+    src: url(https://auth.gruzservices.com/fonts/Louis-George-Cafe-Italic.ttf);
+  }
+  .main {
+    width: 100vw;
+    height: 100vh;
+    --green-light: #d8f3dc;
+    --green-light-2: #b7e4c7;
+    --green-light-3: #95d5b2;
+    --green-light-4: #74c69d;
+    --green: #52b788;
+    --green-2: #40916c;
+    --green-3: #2d6a4f;
+    --green-4: #1b4332;
+    --green-5-5: #102e24;
+    --green-5: #081c15;
+    background-color: var(--green-5);
+    background: linear-gradient(
+      180deg,
+      var(--green-5-5) 0%,
+      var(--green-5) 70%,
+      var(--green-5) 100%
+    );
+    position: relative;
+  }
+  .box {
+    --box-move: 0.25s;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transition: top var(--box-move) ease-in-out,
+      left var(--box-move) ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box .actual {
+    width: 50px;
+    height: 50px;
+    background-color: var(--green-2);
+    border-radius: 50%;
+  }
+  .secCover {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+  .sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: black 1.95px 1.95px 2.6px;
+    border-radius: 10px;
+    padding: 50px;
+    gap: 20px;
+    background-color: var(--green-4);
+  }
+
+  /* .button {
+    border: none;
+    background-color: var(--border-color);
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    transition: border-color 0.25s linear, background-color 0.25s linear;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .button:hover {
+    background-color: var(--green-light-4);
+  } */
+
+  .h1 {
+    font-size: 3rem;
+    color: var(--green-light);
+    font-family: "Poppins", sans-serif;
+  }
+  .button {
+    width: 220px;
+    font-size: 0.9rem;
+    font-family: "George-Italic", sans-serif;
+    border-radius: 100vw;
+    border: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 50px;
+    cursor: pointer;
+    transition: box-shadow 0.25s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 8px 8px;
+  }

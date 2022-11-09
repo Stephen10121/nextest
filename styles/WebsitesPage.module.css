@@ -1,0 +1,91 @@
+.websites {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, 80px);
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.website {
+    width: 100%;
+    height: 80px;
+}
+
+.websitesInner {
+    border: 1px solid black;
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5px;
+    gap: 10px;
+}
+
+.websitesInner:hover,
+.websitesInner:focus {
+    outline: 1px solid black;
+}
+
+.buttonNew {
+    border: 1px solid black;
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    gap: 10px;
+    background: none;
+}
+
+.buttonNew:hover,
+.buttonNew:focus {
+    outline: 1px solid black;
+}
+
+.websitesInner h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+}
+
+.websitesInner div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.websitesInner div p {
+    font-family: "Roboto", sans-serif;
+}
+
+.active {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(70, 255, 70);
+}
+
+.inactive {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+}

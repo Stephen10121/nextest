@@ -1,0 +1,158 @@
+.header {
+    width: 100vw;
+    height: 70px;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+}
+
+.header button {
+    width: 30px;
+    height: 30px;
+}
+
+.hamburgerButton {
+    display: block;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: filter 0.25s linear, transform 0.25s ease-in-out;
+}
+
+.hamburgerButton:hover {
+    filter: invert(0.5);
+}
+
+.buttonRotate {
+    transform: rotate(90deg);
+}
+
+.buttonUnRotate {
+    transform: rotate(0deg);
+}
+
+.header button img {
+    width: 100%;
+
+}
+
+.header h1 {
+    font-family: "Poppins";
+}
+
+.goto {
+    color: black;
+    display: flex;
+}
+
+.goto ul {
+    display: none;
+    gap: 10px;
+}
+
+.goto ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+.goto ul li:hover {
+    outline: 1px solid black;
+}
+
+.goto ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.goto p {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout {
+    background-color: #cecece;
+    padding: 6px !important;
+    border: none !important;
+}
+
+.logout a {
+    text-decoration: none;
+    color: black;
+}
+
+.overflow {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: none;
+    top: 70px;
+    right: 0;
+    background-color: #f3f3f3;
+    transition: right 0.25s ease-in-out;
+    color: black;
+    box-shadow: rgb(0 0 0 / 15%) -1.95px 1.95px 2.6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.gone {
+    right: -200px;
+}
+
+.notgone {
+    right: 0;
+}
+
+.overflow ul {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.overflow ul li {
+    display: inline;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+.overflow ul li:hover {
+    outline: 1px solid black;
+}
+
+.overflow ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.overflow p {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (min-width: 550px) {
+    .goto ul {
+        display: flex;
+    }
+
+    .hamburgerButton {
+        display: none;
+    }
+
+    .overflow {
+        right: -200px;
+    }
+}
