@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps =async (context) => {
     }
   }
 
-  const apiUrl = `http://localhost:3000/api/names/${query.query}`;
+  const apiUrl = `http://vercel.gruzservices.com/api/names/${query.query}`;
   const fetched = await fetch(apiUrl);
   const fetchedJson = await fetched.json() as Data;
   return {
