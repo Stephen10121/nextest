@@ -2,8 +2,9 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
-import '../styles/Home.module.css';
+import components from '../styles/Home.module.css';
 import checkUser, { UserData } from '../scripts/checkUser';
+import ThemeChanger from '../components/ThemeChanger';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const checkedUser = await checkUser(context);
@@ -31,8 +32,11 @@ const Home = ({data, loggedIn}: { data?: UserData, loggedIn: boolean}) => {
         <link rel="icon" href="/dashboard.png" />
       </Head>
       <Header loggedIn={loggedIn} where='home'>Dashboard</Header>
-      <h1>Hello {data ? data.usersRName : "Guest"}</h1>
-      <Link href="/search?query=test">Test</Link>
+      <main className={components.main}>
+        <ThemeChanger />
+        <h1 className={components.greeting}>Hello {data ? data.usersRName : "There"}</h1>
+        <Link href="/search?query=test">Test</Link>
+      </main>
     </>
   );
 }
