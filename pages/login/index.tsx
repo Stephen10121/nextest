@@ -86,7 +86,7 @@ const LoginPage = () => {
                         <h1 className={components.h1}>Dashboard</h1>
                         <button id="sauth-login" className={components.button} onClick={showPopup}>
                             Login with Gruzservices <span>
-                                <Image src="https://auth.gruzservices.com/lock2.svg" alt="Lock"/>
+                                <Image src="/lock.svg" alt="Lock" width="15px" height="15px"/>
                             </span>
                         </button>
                     </div>

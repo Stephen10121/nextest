@@ -12,6 +12,7 @@
 .header button {
     width: 30px;
     height: 30px;
+    position: relative;
 }
 
 .hamburgerButton {
@@ -33,11 +34,6 @@
 
 .buttonUnRotate {
     transform: rotate(0deg);
-}
-
-.header button img {
-    width: 100%;
-
 }
 
 .header h1 {

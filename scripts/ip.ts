@@ -1,2 +1,2 @@
-export const AUTH_SERVER = "http://dns.gruzservices.com:4000/auth";
-export const POST_SERVER = "http://dns.gruzservices.com:4000/";
+export const AUTH_SERVER = "https://pi.gruzservices.com/auth";
+export const POST_SERVER = "https://pi.gruzservices.com/";

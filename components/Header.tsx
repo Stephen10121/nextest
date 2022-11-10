@@ -15,7 +15,7 @@ const Header = ({ children, where, loggedIn }: { children: any, where: "websites
             <h1>{children}</h1>
             <nav className={components.goto}>
                 <button onClick={showSmallNav} className={[components.hamburgerButton, showNav? components.buttonRotate : components.buttonUnRotate].join(" ")}>
-                    <Image src="/hamburger.png" alt="Menu"/>
+                    <Image src="/hamburger.png" alt="Menu" layout="fill"/>
                 </button>
                 <ul>
                     {where != "home" ? <li><Link href="/" passHref><a rel="noopener"><p>Home</p></a></Link></li> : null}
