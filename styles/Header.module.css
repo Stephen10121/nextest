@@ -1,7 +1,7 @@
 .header {
     width: 100vw;
     height: 70px;
-    background-color: #f3f3f3;
+    background-color: var(--header-background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,6 +22,7 @@
     outline: none;
     border: none;
     transition: filter 0.25s linear, transform 0.25s ease-in-out;
+    filter: invert(var(--hamburger-invert));
 }
 
 .hamburgerButton:hover {
@@ -38,10 +39,11 @@
 
 .header h1 {
     font-family: "Poppins";
+    color: var(--header-text-color);
 }
 
 .goto {
-    color: black;
+    color: var(--header-text-color);
     display: flex;
 }
 
@@ -54,36 +56,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid var(--header-border-color);
     border-radius: 5px;
     padding: 5px;
     font-family: "Roboto", sans-serif;
 }
 
 .goto ul li:hover {
-    outline: 1px solid black;
+    outline: 1px solid var(--header-border-color);
 }
 
 .goto ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--header-text-color);
 }
 
 .goto p {
-    color: black;
+    color: var(--header-text-color);
     cursor: pointer;
     text-decoration: none;
 }
 
 .logout {
-    background-color: #cecece;
+    background-color: var(--logout-background-color);
     padding: 6px !important;
     border: none !important;
 }
 
 .logout a {
     text-decoration: none;
-    color: black;
+}
+
+.logout p {
+    color: var(--logout-text-color) !important;
 }
 
 .overflow {
@@ -93,9 +98,9 @@
     background: none;
     top: 70px;
     right: 0;
-    background-color: #f3f3f3;
+    background-color: var(--header-background-color);
     transition: right 0.25s ease-in-out;
-    color: black;
+    color: var(--header-text-color);
     box-shadow: rgb(0 0 0 / 15%) -1.95px 1.95px 2.6px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -118,23 +123,23 @@
 
 .overflow ul li {
     display: inline;
-    border: 1px solid black;
+    border: 1px solid var(--header-border-color);
     border-radius: 5px;
     padding: 5px;
     font-family: "Roboto", sans-serif;
 }
 
 .overflow ul li:hover {
-    outline: 1px solid black;
+    outline: 1px solid var(--header-border-color);
 }
 
 .overflow ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--header-text-color);
 }
 
 .overflow p {
-    color: black;
+    color: var(--header-text-color);
     cursor: pointer;
     text-decoration: none;
 }

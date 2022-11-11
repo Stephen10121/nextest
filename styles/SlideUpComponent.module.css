@@ -2,7 +2,7 @@
     position: fixed;
     width: 100vw;
     height: 90vh;
-    background-color: #dfdfdf;
+    background-color: var(--slide-up-background-color);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -26,6 +26,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    color: var(--slide-up-text-color);
 }
 
 .title {
@@ -38,12 +39,12 @@
     background: none;
     cursor: pointer;
     font-size: 2rem;
-    color: black;
+    color: var(--close-button-color);
     transition: color 0.15s linear;
 }
 
 .closeButton:hover {
-    color: gray;
+    color: var(--close-button-hover-color);
 }
 
 .main {

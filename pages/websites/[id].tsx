@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 }
 
-const Try = ({ id, error, websiteData }: { id?: string, error?:boolean, websiteData?: Website }) => {
+const Try = ({ id, error, websiteData, changeTheme }: { id?: string, error?:boolean, websiteData?: Website, changeTheme: any }) => {
     if (error || !id || !websiteData) {
         return(
             <h1>Error Loading data</h1>
@@ -63,7 +63,7 @@ const Try = ({ id, error, websiteData }: { id?: string, error?:boolean, websiteD
                 <meta name="robots" content="noindex" />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={true} where="singleWebsite">{websiteData.name}</Header>
+            <Header loggedIn={true} where="singleWebsite" changeTheme={changeTheme}>{websiteData.name}</Header>
             <SingleWebsite data={websiteData} />
         </>
     );

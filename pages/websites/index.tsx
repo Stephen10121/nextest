@@ -48,7 +48,7 @@ export const getServerSideProps: GetServerSideProps =async (context) => {
     }
 }
 
-const Websites = ({data, websites}: { data: UserData, websites?: Website[]}) => {
+const Websites = ({data, websites, changeTheme}: { data: UserData, websites?: Website[], changeTheme: any }) => {
     return(
         <>
             <Head>
@@ -56,7 +56,7 @@ const Websites = ({data, websites}: { data: UserData, websites?: Website[]}) => 
                 <meta name="description" content="Websites that you created." />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={true} where="websites">Websites</Header>
+            <Header loggedIn={true} changeTheme={changeTheme} where="websites">Websites</Header>
             {!websites ? <section className={components.errorWebsitesLoad}><h1>Error loading websites</h1></section>: <WebsitesArray websites={websites} />}
         </>
     );

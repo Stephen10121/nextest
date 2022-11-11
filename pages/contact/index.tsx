@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps =async (context) => {
     }
 }
 
-const Contact = ({ loggedIn }: {loggedIn: boolean}) => {
+const Contact = ({ loggedIn, changeTheme }: {loggedIn: boolean, changeTheme: any }) => {
     return(
         <>
             <Head>
@@ -29,7 +29,7 @@ const Contact = ({ loggedIn }: {loggedIn: boolean}) => {
                 <meta name="description" content="Websites that you created." />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={loggedIn} where="contact">Contact</Header>
+            <Header loggedIn={loggedIn} changeTheme={changeTheme} where="contact">Contact</Header>
             <section className={components.websites}>
                 <h1>Contact someone</h1>
             </section>

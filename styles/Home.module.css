@@ -5,10 +5,22 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: var(--main-background-color);
 }
 
 .greeting {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 3rem;
+    color: var(--main-text-color);
+}
+
+.fancy {
+    color: var(--main-fancy-text-color);
+}
+
+@media (max-width: 450px) {
+    .greeting {
+        font-size: 2rem;
+    }
 }

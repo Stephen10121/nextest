@@ -1,0 +1,16 @@
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 5px;
+    background: none;
+    top: var(--hide-loader);
+    left: 0;
+    z-index: 100;
+}
+
+.bar {
+    width: var(--loading-state);
+    height: 5px;
+    background-color: var(--main-fancy-text-color);
+    transition: width 1s linear;
+}

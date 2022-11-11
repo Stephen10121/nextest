@@ -1,0 +1,38 @@
+.grad {
+    width: var(--outer-width);
+    height: var(--outer-height);
+    position:relative;
+    background: #f3f3f3;
+    position: relative;
+    border-radius: var(--outer-radius);
+    overflow: hidden;
+  }
+  
+  .grad::before {
+    content: "";
+    width: 200%;
+    height: 150%;
+    background-image: var(--gradient);
+    position: absolute;
+    top: -25%;
+    left: -50%;
+    animation: rotation 4s linear forwards infinite;
+  }
+  
+  .child {
+    width: calc(100% - calc(var(--spacing) * 2));
+    height: calc(100% - calc(var(--spacing) * 2));
+    background-color: #fff;
+    position: absolute;
+    top: var(--spacing);
+    left: var(--spacing);
+    border-radius: var(--inner-radius);
+  }
+  @keyframes rotation {
+  0% {
+  transform: rotate(0deg);
+  }
+  100% {
+  transform: rotate(359deg);
+  }
+  }
