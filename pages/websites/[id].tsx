@@ -1,7 +1,8 @@
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
 import Head from "next/head";
-import Header from "../../components/Header";
+import Header from "../../components/header/Header";
 import SingleWebsite from "../../components/SingleWebsite";
+import { CurrentTheme } from "../../components/themechanger/ThemeChanger";
 import { Website } from "../../components/WebsiteDiv";
 import checkUser from "../../scripts/checkUser";
 import { POST_SERVER } from "../../scripts/ip";
@@ -50,7 +51,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 }
 
-const Try = ({ id, error, websiteData, changeTheme }: { id?: string, error?:boolean, websiteData?: Website, changeTheme: any }) => {
+const Try = ({ id, error, websiteData, changeTheme, currentTheme }: { id?: string, error?:boolean, websiteData?: Website, changeTheme: any, currentTheme: CurrentTheme }) => {
     if (error || !id || !websiteData) {
         return(
             <h1>Error Loading data</h1>
@@ -63,7 +64,7 @@ const Try = ({ id, error, websiteData, changeTheme }: { id?: string, error?:bool
                 <meta name="robots" content="noindex" />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={true} where="singleWebsite" changeTheme={changeTheme}>{websiteData.name}</Header>
+            <Header loggedIn={true} where="singleWebsite" changeTheme={changeTheme} currentTheme={currentTheme}>{websiteData.name}</Header>
             <SingleWebsite data={websiteData} />
         </>
     );

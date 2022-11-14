@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import components from '../styles/ErrorPage.module.css';
+import components from './ErrorPage.module.css';
 
 const ErrorPage = () => {
   return (

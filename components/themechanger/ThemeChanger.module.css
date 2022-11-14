@@ -1,0 +1,49 @@
+.themeChanger {
+    width: 100%;
+    background: none;
+    height: 50px;
+}
+
+.textGone {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.themeChanger > fieldset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 0;
+}
+
+.themeChanger input[type="radio"] {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    outline: 3px solid var(--radio-color, currentColor);
+    outline-offset: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    background:none;
+    transition: background 0.25s linear;
+}
+
+.themeChanger input[type="radio"]:checked {
+    background-color: var(--radio-color);
+}
+
+.dark {
+    --radio-color: black;
+}
+
+.light {
+    --radio-color: gray;
+}

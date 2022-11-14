@@ -1,5 +1,4 @@
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
-import components from '../styles/User.module.css';
+import components from './User.module.css';
 
 const User = (props: { name: string, type: "channel" | "name", active: boolean }) => {
   return (

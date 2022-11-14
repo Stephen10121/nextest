@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import components from "../styles/SlideUpComponent.module.css";
+import components from "./SlideUpComponent.module.css";
 const SlideUpComponent = ({ children, stopShowingForm, title }: { children: any, stopShowingForm: Dispatch<SetStateAction<boolean>>, title?: string }) => {
     const [close, setClose] = useState(false);
 

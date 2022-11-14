@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputBox from "./InputBox";
+import InputBox from "./inputBox/InputBox";
 
 const AddWebsiteForm = () => {
     const [ link, setLink ] = useState("");

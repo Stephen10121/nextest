@@ -1,7 +1,7 @@
 import { useState } from "react";
 import components from "../styles/WebsitesPage.module.css";
 import AddWebsiteForm from "./AddWebsiteForm";
-import SlideUpComponent from "./SlideUpComponent";
+import SlideUpComponent from "./slideupcomponent/SlideUpComponent";
 
 const AddWebsiteComp = () => {
     const [showForm, setShowForm] = useState(false);

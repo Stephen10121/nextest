@@ -1,4 +1,4 @@
-import components from "../styles/InputBox.module.css";
+import components from "./InputBox.module.css";
 
 type Props = {
     setValue: (value: string) => void;

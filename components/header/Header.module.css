@@ -42,41 +42,6 @@
     color: var(--header-text-color);
 }
 
-.goto {
-    color: var(--header-text-color);
-    display: flex;
-}
-
-.goto ul {
-    display: none;
-    gap: 10px;
-}
-
-.goto ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--header-border-color);
-    border-radius: 5px;
-    padding: 5px;
-    font-family: "Roboto", sans-serif;
-}
-
-.goto ul li:hover {
-    outline: 1px solid var(--header-border-color);
-}
-
-.goto ul li a {
-    text-decoration: none;
-    color: var(--header-text-color);
-}
-
-.goto p {
-    color: var(--header-text-color);
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .logout {
     background-color: var(--logout-background-color);
     padding: 6px !important;
@@ -95,7 +60,6 @@
     position: absolute;
     width: 200px;
     height: 300px;
-    background: none;
     top: 70px;
     right: 0;
     background-color: var(--header-background-color);
@@ -104,6 +68,10 @@
     box-shadow: rgb(0 0 0 / 15%) -1.95px 1.95px 2.6px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    flex-direction: column;
 }
 
 .gone {
@@ -114,14 +82,8 @@
     right: 0;
 }
 
-.overflow ul {
-    display: flex;
-    gap: 5px;
-    padding: 5px;
-    flex-direction: column;
-}
 
-.overflow ul li {
+.overflow li {
     display: inline;
     border: 1px solid var(--header-border-color);
     border-radius: 5px;
@@ -129,11 +91,11 @@
     font-family: "Roboto", sans-serif;
 }
 
-.overflow ul li:hover {
+.overflow li:hover {
     outline: 1px solid var(--header-border-color);
 }
 
-.overflow ul li a {
+.overflow li a {
     text-decoration: none;
     color: var(--header-text-color);
 }
@@ -142,18 +104,4 @@
     color: var(--header-text-color);
     cursor: pointer;
     text-decoration: none;
-}
-
-@media (min-width: 550px) {
-    .goto ul {
-        display: flex;
-    }
-
-    .hamburgerButton {
-        display: none;
-    }
-
-    .overflow {
-        right: -200px;
-    }
 }

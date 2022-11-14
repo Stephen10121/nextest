@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import ErrorPage from '../../components/ErrorPage';
-import User from '../../components/User';
+import ErrorPage from '../../components/errorpage/ErrorPage';
+import User from '../../components/user/User';
 import components from "../../styles/SearchPage.module.css";
 
 type User = {
