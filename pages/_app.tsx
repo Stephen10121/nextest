@@ -7,7 +7,7 @@ import Router from "next/router";
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const [currentTheme, setCurrentTheme] = useState("light");
-
+  
   function setTheme(theme: string) {
     setCurrentTheme(theme);
     window.localStorage.setItem("theme", theme);
@@ -21,13 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       setCurrentTheme("dark");
     }
 
-    const start = () => {
-      setLoading(true);
-    };
-
-    const end = () => {
-      setLoading(false);
-    };
+    const start = () => setLoading(true);
+    const end = () => setLoading(false);
 
     Router.events.on("routeChangeStart", start);
     Router.events.on("routeChangeComplete", end);
@@ -42,27 +37,27 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Loading />
+      <Loading/>
       <style global jsx>{`
-      :root {
-        --header-background-color: ${currentTheme==="light" ? "#f3f3f3" : "#212121"};
-        --header-text-color: ${currentTheme==="light" ? "#000" : "#afafaf"};
-        --header-border-color: ${currentTheme==="light" ? "#000" : "#afafaf"};
-        --logout-background-color: ${currentTheme==="light" ? "#cecece" : "white"};
-        --logout-text-color: #000;
-        --hamburger-invert: ${currentTheme==="light" ? "0" : "0.7"};
-        --main-background-color: ${currentTheme==="light" ? "#fff" : "#000"};
-        --main-text-color: ${currentTheme==="light" ? "#000" : "#fff"};
-        --main-fancy-text-color: ${currentTheme==="light" ? "#FB2576" : "#FB2576"};
-        --color-picker-background-color: ${currentTheme==="light" ? "#dfdfdf" : "#3F0071"};
-        --website-tile-border-color: ${currentTheme==="light" ? "#000" : "#FB2576"};
-        --slide-up-background-color: ${currentTheme==="light" ? "#dfdfdf" : "#000"};
-        --slide-up-text-color: ${currentTheme==="light" ? "#000": "#808080"};
-        --close-button-color: ${currentTheme==="light" ? "#000" : "#808080"};
-        --close-button-hover-color: ${currentTheme==="light" ? "#808080" : "#fff"};
-        --loading-state: ${loading ? "100vw" : "0"};
-        --hide-loader: ${loading ? "0": "-5px"};
-      }
+        :root {
+          --header-background-color: ${currentTheme==="light" ? "#f3f3f3" : "#212121"};
+          --header-text-color: ${currentTheme==="light" ? "#000000" : "#afafaf"};
+          --header-border-color: ${currentTheme==="light" ? "#000000" : "#afafaf"};
+          --logout-background-color: ${currentTheme==="light" ? "#cecece" : "#fffff"};
+          --logout-text-color: #000;
+          --hamburger-invert: ${currentTheme==="light" ? "0" : "0.7"};
+          --main-background-color: ${currentTheme==="light" ? "#ffffff" : "#000000"};
+          --main-text-color: ${currentTheme==="light" ? "#000000" : "#ffffff"};
+          --main-fancy-text-color: ${currentTheme==="light" ? "#FB2576" : "#FB2576"};
+          --color-picker-background-color: ${currentTheme==="light" ? "#dfdfdf" : "#3F0071"};
+          --website-tile-border-color: ${currentTheme==="light" ? "#000000" : "#FB2576"};
+          --slide-up-background-color: ${currentTheme==="light" ? "#dfdfdf" : "#000000"};
+          --slide-up-text-color: ${currentTheme==="light" ? "#000000": "#808080"};
+          --close-button-color: ${currentTheme==="light" ? "#000000" : "#808080"};
+          --close-button-hover-color: ${currentTheme==="light" ? "#808080" : "#ffffff"};
+          --loading-state: ${loading ? "100vw" : "0"};
+          --hide-loader: ${loading ? "0" : "-10px"};
+        }
       `}</style>
       <Component {...pageProps} changeTheme={setTheme} currentTheme={currentTheme}/>
     </>

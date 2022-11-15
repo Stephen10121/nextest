@@ -1,9 +1,11 @@
 import components from "./ThemeChanger.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CustomTheme from "../customTheme/CustomTheme";
 
-export type CurrentTheme = "light" | "dark"; 
+export type CurrentTheme = "light" | "dark" | "custom"; 
 
 const ThemeChanger = ({changeTheme, currentTheme}: {changeTheme: any, currentTheme: CurrentTheme}) => {
+    const [showCustom, setShowCustom] = useState(false);
     useEffect(() => {
         //@ts-ignore
         document.querySelector(`#${currentTheme}`).checked = true;
@@ -17,7 +19,10 @@ const ThemeChanger = ({changeTheme, currentTheme}: {changeTheme: any, currentThe
                 <input type="radio" name="theme" id="light" className={components.light} defaultChecked={currentTheme==="light" ? true : false} onClick={() => changeTheme("light")}/>
                 <label htmlFor="dark" className={components.textGone}>Dark</label>
                 <input type="radio" name="theme" id="dark" className={components.dark} defaultChecked={currentTheme==="dark" ? true : false} onClick={() => changeTheme("dark")}/>
+                <label htmlFor="custom" className={components.textGone}>Dark</label>
+                <input type="radio" name="theme" id="custom" className={components.dark} defaultChecked={currentTheme==="custom" ? true : false} onClick={() => changeTheme("custom")}/>
             </fieldset>
+            {showCustom ? <CustomTheme close={() => setShowCustom(false)}/> : null}
         </section>
     );
 }

@@ -12,5 +12,5 @@
     width: var(--loading-state);
     height: 5px;
     background-color: var(--main-fancy-text-color);
-    transition: width 1s linear;
+    transition: width 2s linear;
 }
