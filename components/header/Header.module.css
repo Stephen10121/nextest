@@ -43,7 +43,7 @@
 }
 
 .logout {
-    background-color: var(--logout-background-color);
+    background-color: var(--logout-background-color) !important;
     padding: 6px !important;
     border: none !important;
 }

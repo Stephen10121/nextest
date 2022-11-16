@@ -7,6 +7,7 @@ import { POST_SERVER } from "../../scripts/ip";
 import components from "../../styles/WebsitesPage.module.css";
 import { Website } from "../../components/WebsiteDiv"; 
 import { CurrentTheme } from "../../components/themechanger/ThemeChanger";
+import { ChangeVarProp } from "../../components/customTheme/CustomTheme";
 
 export const getServerSideProps: GetServerSideProps =async (context) => {
     const checkedUser = await checkUser(context);
@@ -49,7 +50,7 @@ export const getServerSideProps: GetServerSideProps =async (context) => {
     }
 }
 
-const Websites = ({data, websites, changeTheme, currentTheme}: { data: UserData, websites?: Website[], changeTheme: any, currentTheme: CurrentTheme }) => {
+const Websites = ({data, websites, changeTheme, currentTheme, changeVar }: { data: UserData, websites?: Website[], changeTheme: any, currentTheme: CurrentTheme, changeVar: ChangeVarProp }) => {
     return(
         <>
             <Head>
@@ -57,7 +58,7 @@ const Websites = ({data, websites, changeTheme, currentTheme}: { data: UserData,
                 <meta name="description" content="Websites that you created." />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={true} changeTheme={changeTheme} where="websites" currentTheme={currentTheme}>Websites</Header>
+            <Header loggedIn={true} changeTheme={changeTheme} where="websites" currentTheme={currentTheme} changeVar={changeVar}>Websites</Header>
             {!websites ? <section className={components.errorWebsitesLoad}><h1>Error loading websites</h1></section>: <WebsitesArray websites={websites} />}
         </>
     );

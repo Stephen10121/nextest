@@ -3,35 +3,34 @@ import { changeCssVar, getAllCSSVariableNames, getElementCSSVariables } from "..
 import ColorInput from "../colorInput/ColorInput";
 import styles from "./CustomTheme.module.css";
 
-const CustomTheme = ({ close }: { close: () => void }) => {
+export type ChangeVarProp = (key: string, value: string, multi?: boolean) => void;
+
+const CustomTheme = ({ changeVar, saveData }: { changeVar: ChangeVarProp, saveData: () => void }) => {
     const [vars, setVars] = useState<any>(null);
     const [inputs, setInputs] = useState<null | Array<JSX.Element | null>>(null);
-    let root: Element | null;
-
-    useEffect(() => {
-        root = document.querySelector(':root');
-        setVars(getElementCSSVariables(getAllCSSVariableNames(document.styleSheets), document.body, document.documentElement))
-    }, []);
 
     function change(variable: string, color: string) {
-        changeCssVar(variable, color, document.querySelector(':root'));
+        changeVar(variable, color);
+        // changeCssVar(variable, color, document.querySelector(':root'));
     }
 
     useEffect(() => {
+        setVars(getElementCSSVariables(getAllCSSVariableNames(document.styleSheets), document.body, document.documentElement));
+    }, []);
+
+    useEffect(() => {
         if (vars) {
-            setInputs(Object.keys(vars).map((key, index) => key.includes("color") ? <ColorInput key={index} onChange={(value) => change(key, value)} defualtValue={vars[key]}>{key}</ColorInput> : null));
+            setInputs(Object.keys(vars).map((key, index) => key.includes("color") ? <ColorInput saveData={saveData} key={index} onChange={(value) => change(key, value)} defualtValue={vars[key]}>{key}</ColorInput> : null));
         }
     }, [vars]);
 
     return(
-        <section className={styles.body}>
-            <section className={styles.header}>
-                <h1>Custom Style</h1>
-                <button title="Close Popup" className={styles.closeButton} onClick={close}>&times;</button>
-            </section>
-            <section className={styles.list}>
-                {inputs ? inputs : null}
-            </section>
+        <section className={styles.list}>
+            {inputs ? inputs : null}
+            <div className={styles.row2}>
+                <input type="text" placeholder="Paste Custom JSON" />
+                <button className={styles.save}>Copy Style JSON</button>
+            </div>
         </section>
     );
 }

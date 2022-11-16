@@ -1,5 +1,6 @@
 import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
 import Head from "next/head";
+import { ChangeVarProp } from "../../components/customTheme/CustomTheme";
 import Header from "../../components/header/Header";
 import SingleWebsite from "../../components/SingleWebsite";
 import { CurrentTheme } from "../../components/themechanger/ThemeChanger";
@@ -51,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 }
 
-const Try = ({ id, error, websiteData, changeTheme, currentTheme }: { id?: string, error?:boolean, websiteData?: Website, changeTheme: any, currentTheme: CurrentTheme }) => {
+const Try = ({ id, error, websiteData, changeTheme, currentTheme, changeVar }: { id?: string, error?:boolean, websiteData?: Website, changeTheme: any, currentTheme: CurrentTheme, changeVar: ChangeVarProp }) => {
     if (error || !id || !websiteData) {
         return(
             <h1>Error Loading data</h1>
@@ -64,7 +65,7 @@ const Try = ({ id, error, websiteData, changeTheme, currentTheme }: { id?: strin
                 <meta name="robots" content="noindex" />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={true} where="singleWebsite" changeTheme={changeTheme} currentTheme={currentTheme}>{websiteData.name}</Header>
+            <Header loggedIn={true} where="singleWebsite" changeTheme={changeTheme} currentTheme={currentTheme} changeVar={changeVar}>{websiteData.name}</Header>
             <SingleWebsite data={websiteData} />
         </>
     );

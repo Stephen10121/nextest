@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 import { AUTH_SERVER, POST_SERVER } from "../../scripts/ip";
 import components from "../../styles/LoginPage.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Router from 'next/router'
 import Head from "next/head";
 import authenticationPopup from "gruzauth";
@@ -53,19 +53,23 @@ const showPopup = () => {
 const LoginPage = () => {
     const [navigate, setNavigate] = useState({ go: false, where: "/" } as NavigateState)
 
-    socket.on("auth", (data) => {
-        document.cookie = `G_DASH=${data.token}`;
-        let redirect: any;
-        if (typeof window !== "undefined") {
-            const url = new URL(window.location.href);
-            redirect = url.searchParams.get("redirect");
-        }
-        setNavigate({ go: true, where: redirect ? redirect : "/" });
-    });
+    useEffect(() => {
+        socket.on("auth", (data) => {
+            document.cookie = `G_DASH=${data.token}`;
+            let redirect: any;
+            if (typeof window !== "undefined") {
+                const url = new URL(window.location.href);
+                redirect = url.searchParams.get("redirect");
+            }
+            setNavigate({ go: true, where: redirect ? redirect : "/" });
+        });
+    }, []);
 
-    if (navigate.go) {
-        Router.push(navigate.where);
-    }
+    useEffect(() => {
+        if (navigate.go) {
+            Router.push(navigate.where);
+        }
+    }, [navigate.go]);
 
     return(
         <>

@@ -3,8 +3,9 @@ import { useState } from "react";
 import components from "./Header.module.css";
 import Image from "next/image";
 import ThemeChanger, { CurrentTheme } from "../themechanger/ThemeChanger";
+import { ChangeVarProp } from "../customTheme/CustomTheme";
 
-const Header = ({ children, where, loggedIn, changeTheme, currentTheme }: { children: any, where: "websites" | "home" | "contact" | "singleWebsite", loggedIn: boolean, changeTheme: any, currentTheme: CurrentTheme }) => {
+const Header = ({ children, where, loggedIn, changeTheme, currentTheme, changeVar }: { children: any, where: "websites" | "home" | "contact" | "singleWebsite", loggedIn: boolean, changeTheme: any, currentTheme: CurrentTheme, changeVar: ChangeVarProp }) => {
     const [showNav, setShowNav] = useState(false);
 
     function showSmallNav() {
@@ -23,7 +24,7 @@ const Header = ({ children, where, loggedIn, changeTheme, currentTheme }: { chil
                     {where != "websites" && loggedIn ? <li><Link href="/websites" passHref><a rel="noopener"><p>Websites</p></a></Link></li> : null}
                     {where != "contact" ? <li><Link href="/contact" passHref><a rel="noopener"><p>Contact</p></a></Link></li> : null}
                     { loggedIn ? <li className={components.logout}><a href="/logout"><p>Logout</p></a></li> : <li><Link href="/login" passHref><a rel="noopener"><p>Login</p></a></Link></li>}
-                    <ThemeChanger changeTheme={changeTheme} currentTheme={currentTheme}/>
+                    <ThemeChanger changeTheme={changeTheme} currentTheme={currentTheme} changeVar={changeVar}/>
                 </ul>
             </nav>
         </header>

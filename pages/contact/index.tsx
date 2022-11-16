@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { ChangeVarProp } from "../../components/customTheme/CustomTheme";
 import Header from "../../components/header/Header";
 import { CurrentTheme } from "../../components/themechanger/ThemeChanger";
 import checkUser from "../../scripts/checkUser";
@@ -22,7 +23,7 @@ export const getServerSideProps: GetServerSideProps =async (context) => {
     }
 }
 
-const Contact = ({ loggedIn, changeTheme, currentTheme }: {loggedIn: boolean, changeTheme: any, currentTheme: CurrentTheme }) => {
+const Contact = ({ loggedIn, changeTheme, currentTheme, changeVar }: {loggedIn: boolean, changeTheme: any, currentTheme: CurrentTheme, changeVar: ChangeVarProp }) => {
     return(
         <>
             <Head>
@@ -30,7 +31,7 @@ const Contact = ({ loggedIn, changeTheme, currentTheme }: {loggedIn: boolean, ch
                 <meta name="description" content="Websites that you created." />
                 <link rel="icon" href="/dashboard.png" />
             </Head>
-            <Header loggedIn={loggedIn} changeTheme={changeTheme} where="contact" currentTheme={currentTheme}>Contact</Header>
+            <Header loggedIn={loggedIn} changeTheme={changeTheme} where="contact" currentTheme={currentTheme} changeVar={changeVar}>Contact</Header>
             <section className={components.websites}>
                 <h1>Contact someone</h1>
             </section>
